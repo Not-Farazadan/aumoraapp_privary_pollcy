@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#13111c">
+  <meta name="description" content="Request deletion of your Aumora account and associated personal data.">
+  <title>Aumora | Account Deletion</title>
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 24px; background: #13111c; color: #faf5fa; font: 16px/1.65 Arial, Helvetica, sans-serif; }
+    main { max-width: 730px; margin: 32px auto; padding: 38px; background: #201c2b; border: 1px solid #3b3349; border-radius: 20px; }
+    .brand { color: #f0a3c8; font-size: 27px; font-weight: 800; letter-spacing: 2px; }
+    h1 { font-size: 30px; line-height: 1.2; margin: 18px 0; }
+    h2 { font-size: 19px; color: #f2b3d3; margin-top: 30px; }
+    p, li { color: #e0dbe6; }
+    a { color: #ffc3df; }
+    .button { background: #d65193; color: #fff; border: none; border-radius: 10px; cursor: pointer; font: 700 16px Arial, sans-serif; padding: 15px 22px; }
+    .button:hover, .button:focus-visible { background: #b93b79; }
+    .primary-action { display: block; width: 100%; margin: 22px 0 12px; }
+    .secondary-button { background: #373040; }
+    .secondary-button:hover, .secondary-button:focus-visible { background: #4d435a; }
+    .note { margin-top: 26px; background: #30283c; padding: 16px; border-left: 3px solid #e67cad; border-radius: 7px; }
+    footer { color: #c5bcca; font-size: 13px; margin-top: 32px; }
+    dialog { width: min(94vw, 460px); max-height: 90vh; overflow-y: auto; padding: 28px; background: #241f30; color: #faf5fa; border: 1px solid #55435d; border-radius: 18px; box-shadow: 0 20px 65px #0009; }
+    dialog::backdrop { background: #000b; }
+    dialog h2 { margin: 0 0 8px; font-size: 24px; color: #fff; }
+    label { display: block; font-weight: 700; margin: 16px 0 6px; }
+    input { width: 100%; padding: 13px; background: #171320; color: #fff; border: 1px solid #71617d; border-radius: 9px; font: inherit; }
+    input:focus { outline: 2px solid #e67cad; outline-offset: 2px; }
+    .small { font-size: 13px; color: #d1c7d9; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .actions button { flex: 1; }
+    .honey { display: none; }
+    @media (max-width: 600px) { body { padding: 12px; } main { padding: 24px; margin: 8px auto; } h1 { font-size: 26px; } dialog { padding: 22px; } }
+  </style>
+</head>
+<body>
+<main>
+  <div class="brand">AUMORA</div>
+  <h1>Account Deletion Request</h1>
+  <p>You can request permanent deletion of your Aumora account and associated personal data, even if you have uninstalled the app.</p>
+
+  <h2>Option 1: Delete Inside the App</h2>
+  <ol>
+    <li>Open Aumora and sign in.</li>
+    <li>Go to Profile or Settings and tap <strong>Delete Account</strong>.</li>
+    <li>Review the warning and confirm your request.</li>
+    <li>Complete any identity verification and follow the on-screen instructions.</li>
+  </ol>
+
+  <h2>Option 2: Request Deletion Here</h2>
+  <p>Click the button below. A popup will ask for your Aumora in-app username and your registered email address. Submit the form to send your deletion request to our support inbox.</p>
+  <button type="button" class="button primary-action" id="open-request">Request Account Deletion</button>
+  <p class="small">Support: <a href="mailto:bridenook@gmail.com">bridenook@gmail.com</a>. This is a request, not immediate deletion. We will verify account ownership before processing it.</p>
+
+  <h2>What Data Is Deleted?</h2>
+  <p>When your deletion request is completed, account-associated personal data will be deleted or de-identified as applicable, including:</p>
+  <ul>
+    <li>Account profile and identifying information</li>
+    <li>Bookshelf, bookmarks and reading progress</li>
+    <li>Audiobook listening progress and history</li>
+    <li>Remaining coins and points</li>
+    <li>Account-specific chapter unlocks and entitlements</li>
+  </ul>
+  <h2>Data Retention</h2>
+  <p>Limited purchase, security or legal records may be retained where necessary and as explained in Aumora's Privacy Policy. Account deletion may result in loss of access to previously unlocked content.</p>
+  <div class="note"><strong>Important:</strong> Never send your password, payment-card details or one-time verification codes. Account deletion is permanent once completed.</div>
+  <footer>Aumora — eBooks &amp; Audiobooks · Privacy and Account Support</footer>
+</main>
+
+<dialog id="request-dialog" aria-labelledby="dialog-heading">
+  <h2 id="dialog-heading">Request Account Deletion</h2>
+  <p class="small">Enter the username you use in Aumora and the email address linked to your account.</p>
+
+  <!-- FormSubmit forwards submissions to the support inbox after email activation. -->
+  <form action="https://formsubmit.co/bridenook@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="Aumora - Account Deletion Request">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="request_type" value="Delete Aumora account and associated data">
+    <div class="honey" aria-hidden="true"><label for="website">Leave blank</label><input id="website" name="_honey" autocomplete="off" tabindex="-1"></div>
+
+    <label for="username">Aumora in-app username *</label>
+    <input id="username" name="aumora_username" type="text" maxlength="80" autocomplete="nickname" placeholder="Your Aumora username" required>
+
+    <label for="account-email">Registered account email *</label>
+    <input id="account-email" name="email" type="email" maxlength="254" autocomplete="email" placeholder="you@example.com" required>
+
+    <p class="small">Your information is submitted through the third-party form service FormSubmit and forwarded to bridenook@gmail.com. We will verify that you own the account before deleting it.</p>
+
+    <div class="actions">
+      <button class="button secondary-button" type="button" id="cancel-request">Cancel</button>
+      <button class="button" type="submit">Send Deletion Request</button>
+    </div>
+  </form>
+</dialog>
+
+<script>
+  const requestDialog = document.getElementById('request-dialog');
+  const openRequest = document.getElementById('open-request');
+  const cancelRequest = document.getElementById('cancel-request');
+  const usernameInput = document.getElementById('username');
+
+  openRequest.addEventListener('click', () => {
+    requestDialog.showModal();
+    usernameInput.focus();
+  });
+  cancelRequest.addEventListener('click', () => requestDialog.close());
+  requestDialog.addEventListener('click', (event) => {
+    if (event.target === requestDialog) requestDialog.close();
+  });
+</script>
+</body>
+</html>
