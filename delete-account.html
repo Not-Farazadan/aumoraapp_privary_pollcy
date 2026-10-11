@@ -1,312 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aumora — Delete Account</title>
-  <meta name="description" content="Official Account and Data Deletion request page for Aumora — Romantic Stories & Audiobooks (com.aumora.app)." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#13111c">
+  <meta name="description" content="Request deletion of your Aumora account and associated personal data.">
+  <title>Aumora | Account Deletion</title>
   <style>
-    :root {
-      --bg: #F5F5F7;
-      --surface: #FFFFFF;
-      --surface-subtle: #FAFAFC;
-      --text-primary: #1D1D1F;
-      --text-secondary: #6E6E73;
-      --accent: #E11D48;
-      --accent-hover: #BE123C;
-      --accent-soft: rgba(225, 29, 72, 0.08);
-      --border: #E5E5EA;
-      --radius-lg: 20px;
-      --radius-md: 14px;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #000000;
-        --surface: #1C1C1E;
-        --surface-subtle: #2C2C2E;
-        --text-primary: #F5F5F7;
-        --text-secondary: #A1A1A6;
-        --accent: #FB7185;
-        --accent-hover: #F43F5E;
-        --accent-soft: rgba(251, 113, 133, 0.12);
-        --border: #38383A;
-      }
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg);
-      color: var(--text-primary);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      padding: 40px 16px 72px;
-    }
-
-    .wrapper {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    .card {
-      background-color: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 36px 24px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
-    }
-
-    @media (min-width: 640px) {
-      .card {
-        padding: 48px 44px;
-      }
-    }
-
-    .eyebrow {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--accent);
-      background-color: var(--accent-soft);
-      padding: 4px 12px;
-      border-radius: 999px;
-      margin-bottom: 14px;
-    }
-
-    h1 {
-      font-size: 30px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-      margin-bottom: 10px;
-    }
-
-    .subtitle {
-      font-size: 15px;
-      color: var(--text-secondary);
-      padding-bottom: 24px;
-      margin-bottom: 28px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    h2 {
-      font-size: 19px;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      margin-top: 32px;
-      margin-bottom: 12px;
-    }
-
-    h3 {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    p {
-      font-size: 15px;
-      color: var(--text-primary);
-      margin-bottom: 14px;
-    }
-
-    ul, ol {
-      margin: 0 0 18px 22px;
-    }
-
-    li {
-      font-size: 15px;
-      margin-bottom: 8px;
-      color: var(--text-primary);
-    }
-
-    li span.muted {
-      color: var(--text-secondary);
-    }
-
-    .method-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-      margin: 18px 0 24px;
-    }
-
-    .method-box {
-      background-color: var(--surface-subtle);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 22px;
-    }
-
-    .method-tag {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--text-secondary);
-      margin-bottom: 6px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 10px;
-      padding: 11px 20px;
-      background-color: var(--accent);
-      color: #FFFFFF;
-      font-size: 14px;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 999px;
-      transition: background-color 0.15s ease, transform 0.1s ease;
-    }
-
-    .btn:hover {
-      background-color: var(--accent-hover);
-    }
-
-    .btn:active {
-      transform: scale(0.98);
-    }
-
-    .notice-box {
-      background-color: var(--accent-soft);
-      border-left: 3px solid var(--accent);
-      border-radius: 10px;
-      padding: 16px 18px;
-      margin-top: 20px;
-    }
-
-    .notice-box p {
-      margin-bottom: 0;
-      font-size: 14px;
-    }
-
-    code {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 13px;
-      background-color: var(--surface-subtle);
-      border: 1px solid var(--border);
-      padding: 2px 6px;
-      border-radius: 6px;
-    }
-
-    footer {
-      margin-top: 36px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
-      font-size: 13px;
-      color: var(--text-secondary);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 10px;
-    }
-
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 24px; background: #13111c; color: #faf5fa; font: 16px/1.65 Arial, Helvetica, sans-serif; }
+    main { max-width: 730px; margin: 32px auto; padding: 38px; background: #201c2b; border: 1px solid #3b3349; border-radius: 20px; }
+    .brand { color: #f0a3c8; font-size: 27px; font-weight: 800; letter-spacing: 2px; }
+    h1 { font-size: 30px; line-height: 1.2; margin: 18px 0; }
+    h2 { font-size: 19px; color: #f2b3d3; margin-top: 30px; }
+    p, li { color: #e0dbe6; }
+    a { color: #ffc3df; }
+    .button { background: #d65193; color: #fff; border: none; border-radius: 10px; cursor: pointer; font: 700 16px Arial, sans-serif; padding: 15px 22px; }
+    .button:hover, .button:focus-visible { background: #b93b79; }
+    .primary-action { display: block; width: 100%; margin: 22px 0 12px; }
+    .secondary-button { background: #373040; }
+    .secondary-button:hover, .secondary-button:focus-visible { background: #4d435a; }
+    .note { margin-top: 26px; background: #30283c; padding: 16px; border-left: 3px solid #e67cad; border-radius: 7px; }
+    footer { color: #c5bcca; font-size: 13px; margin-top: 32px; }
+    dialog { width: min(94vw, 460px); max-height: 90vh; overflow-y: auto; padding: 28px; background: #241f30; color: #faf5fa; border: 1px solid #55435d; border-radius: 18px; box-shadow: 0 20px 65px #0009; }
+    dialog::backdrop { background: #000b; }
+    dialog h2 { margin: 0 0 8px; font-size: 24px; color: #fff; }
+    label { display: block; font-weight: 700; margin: 16px 0 6px; }
+    input { width: 100%; padding: 13px; background: #171320; color: #fff; border: 1px solid #71617d; border-radius: 9px; font: inherit; }
+    input:focus { outline: 2px solid #e67cad; outline-offset: 2px; }
+    .small { font-size: 13px; color: #d1c7d9; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .actions button { flex: 1; }
+    .honey { display: none; }
+    @media (max-width: 600px) { body { padding: 12px; } main { padding: 24px; margin: 8px auto; } h1 { font-size: 26px; } dialog { padding: 22px; } }
   </style>
 </head>
 <body>
-  <div class="wrapper">
-    <main class="card">
-      <span class="eyebrow">Data &amp; Privacy Center</span>
-      <h1>Aumora — Delete Account</h1>
-      <p class="subtitle">
-        Application: <strong>Aumora — Romantic Stories &amp; Audiobooks</strong> (<code>com.aumora.app</code>)
-      </p>
+<main>
+  <div class="brand">AUMORA</div>
+  <h1>Account Deletion Request</h1>
+  <p>You can request permanent deletion of your Aumora account and associated personal data, even if you have uninstalled the app.</p>
 
-      <p>
-        You have full control over your personal data. At any time, you can request the permanent deletion of your Aumora account and all associated personal information, either directly inside the mobile app or through our external support request channel below if you have already uninstalled the app.
-      </p>
+  <h2>Option 1: Delete Inside the App</h2>
+  <ol>
+    <li>Open Aumora and sign in.</li>
+    <li>Go to Profile or Settings and tap <strong>Delete Account</strong>.</li>
+    <li>Review the warning and confirm your request.</li>
+    <li>Complete any identity verification and follow the on-screen instructions.</li>
+  </ol>
 
-      <h2>How to Request Account Deletion</h2>
-      <div class="method-grid">
-        <!-- Option A: In-App Deletion -->
-        <div class="method-box">
-          <span class="method-tag">Option 1 · Instant</span>
-          <h3>Delete Inside the Aumora App</h3>
-          <p>If you still have Aumora installed on your Android device, you can delete your account immediately:</p>
-          <ol>
-            <li>Open the <strong>Aumora</strong> app and sign in to your account.</li>
-            <li>Go to <strong>Settings (More) &rarr; Account &rarr; Delete Account &amp; Data</strong>.</li>
-            <li>Tap <strong>Delete My Account Permanently</strong> to confirm.</li>
-          </ol>
-          <p style="margin-bottom: 0; font-size: 14px; color: var(--text-secondary);">
-            In-app deletion is processed immediately and permanently erases your account data.
-          </p>
-        </div>
+  <h2>Option 2: Request Deletion Here</h2>
+  <p>Click the button below. A popup will ask for your Aumora in-app username and your registered email address. Submit the form to send your deletion request to our support inbox.</p>
+  <button type="button" class="button primary-action" id="open-request">Request Account Deletion</button>
+  <p class="small">Support: <a href="mailto:bridenook@gmail.com">bridenook@gmail.com</a>. This is a request, not immediate deletion. We will verify account ownership before processing it.</p>
 
-        <!-- Option B: External / Web Email Request -->
-        <div class="method-box">
-          <span class="method-tag">Option 2 · External Request (No App Required)</span>
-          <h3>Request Deletion via Email</h3>
-          <p>
-            If you have uninstalled the app or cannot sign in, you can submit an external deletion request without opening the app:
-          </p>
-          <ol>
-            <li>Send an email from the address linked to your Aumora account to <strong>help@aumora.com</strong>.</li>
-            <li>Use the subject line <code>Delete My Aumora Account</code> and include your registered email address or User ID.</li>
-            <li>Our team will verify ownership, permanently erase your account within <strong>7 business days</strong>, and send you a confirmation email.</li>
-          </ol>
-          <a
-            class="btn"
-            href="mailto:help@aumora.com?subject=Delete%20My%20Aumora%20Account&body=Hello%20Aumora%20Support%2C%0A%0APlease%20permanently%20delete%20my%20Aumora%20account%20and%20all%20associated%20personal%20data.%0A%0ARegistered%20Email%3A%20%5BEnter%20your%20email%20here%5D%0AUser%20ID%20(optional)%3A%20%5BEnter%20ID%20if%20known%5D%0A%0AThank%20you."
-          >
-            Request Deletion via Email
-          </a>
-        </div>
-      </div>
+  <h2>What Data Is Deleted?</h2>
+  <p>When your deletion request is completed, account-associated personal data will be deleted or de-identified as applicable, including:</p>
+  <ul>
+    <li>Account profile and identifying information</li>
+    <li>Bookshelf, bookmarks and reading progress</li>
+    <li>Audiobook listening progress and history</li>
+    <li>Remaining coins and points</li>
+    <li>Account-specific chapter unlocks and entitlements</li>
+  </ul>
+  <h2>Data Retention</h2>
+  <p>Limited purchase, security or legal records may be retained where necessary and as explained in Aumora's Privacy Policy. Account deletion may result in loss of access to previously unlocked content.</p>
+  <div class="note"><strong>Important:</strong> Never send your password, payment-card details or one-time verification codes. Account deletion is permanent once completed.</div>
+  <footer>Aumora — eBooks &amp; Audiobooks · Privacy and Account Support</footer>
+</main>
 
-      <h2>Data That Is Permanently Deleted</h2>
-      <p>When your account deletion is completed, the following data is permanently and irreversibly erased from our active databases:</p>
-      <ul>
-        <li><strong>Account &amp; Profile Information:</strong> Your email address, display name/username, avatar selection, and authentication credentials.</li>
-        <li><strong>Bookshelf &amp; Bookmarks:</strong> Your saved books, favorites, and custom library lists.</li>
-        <li><strong>Reading &amp; Listening Progress:</strong> All eBook chapter positions, page history, and audiobook playback timestamps.</li>
-        <li><strong>Wallet Balances &amp; Coins:</strong> All remaining virtual points, bonus rewards, and daily check-in streaks.</li>
-        <li><strong>Unlocked Chapters:</strong> Your chapter unlock entitlements tied to your user profile.</li>
-      </ul>
+<dialog id="request-dialog" aria-labelledby="dialog-heading">
+  <h2 id="dialog-heading">Request Account Deletion</h2>
+  <p class="small">Enter the username you use in Aumora and the email address linked to your account.</p>
 
-      <h2>Data Retained for Legal &amp; Anti-Fraud Compliance</h2>
-      <p>
-        In accordance with our Privacy Policy and applicable law, a strictly limited set of de-identified or transactional records may be retained solely for legal, tax, financial audit, and security/anti-fraud obligations:
-      </p>
-      <ul>
-        <li><strong>Financial &amp; Purchase Logs:</strong> Anonymized Google Play Billing order IDs and transaction timestamps required for tax, accounting, and refund verification compliance.</li>
-        <li><strong>Security &amp; Anti-Fraud Records:</strong> Cryptographic transaction IDs for rewarded advertisement verification (used strictly to prevent duplicate reward replay fraud), stripped of personal profile information and automatically purged after the statutory retention period (up to 90 days for security logs).</li>
-      </ul>
+  <!-- FormSubmit forwards submissions to the support inbox after email activation. -->
+  <form action="https://formsubmit.co/bridenook@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="Aumora - Account Deletion Request">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="request_type" value="Delete Aumora account and associated data">
+    <div class="honey" aria-hidden="true"><label for="website">Leave blank</label><input id="website" name="_honey" autocomplete="off" tabindex="-1"></div>
 
-      <div class="notice-box">
-        <p>
-          <strong>Important Note About Active Subscriptions:</strong> Deleting your Aumora account does not automatically cancel an active recurring subscription billed through Google Play. To prevent future billing, please manage or cancel any active subscription in the <strong>Google Play Store</strong> app under <em>Profile &rarr; Payments &amp; subscriptions &rarr; Subscriptions</em>.
-        </p>
-      </div>
+    <label for="username">Aumora in-app username *</label>
+    <input id="username" name="aumora_username" type="text" maxlength="80" autocomplete="nickname" placeholder="Your Aumora username" required>
 
-      <footer>
-        <span>&copy; 2026 Aumora — Romantic Stories &amp; Audiobooks</span>
-        <span>
-          <a href="./index.html">Privacy Policy</a> &nbsp;&middot;&nbsp;
-          <a href="mailto:help@aumora.com">help@aumora.com</a>
-        </span>
-      </footer>
-    </main>
-  </div>
+    <label for="account-email">Registered account email *</label>
+    <input id="account-email" name="email" type="email" maxlength="254" autocomplete="email" placeholder="you@example.com" required>
+
+    <p class="small">Your information is submitted through the third-party form service FormSubmit and forwarded to bridenook@gmail.com. We will verify that you own the account before deleting it.</p>
+
+    <div class="actions">
+      <button class="button secondary-button" type="button" id="cancel-request">Cancel</button>
+      <button class="button" type="submit">Send Deletion Request</button>
+    </div>
+  </form>
+</dialog>
+
+<script>
+  const requestDialog = document.getElementById('request-dialog');
+  const openRequest = document.getElementById('open-request');
+  const cancelRequest = document.getElementById('cancel-request');
+  const usernameInput = document.getElementById('username');
+
+  openRequest.addEventListener('click', () => {
+    requestDialog.showModal();
+    usernameInput.focus();
+  });
+  cancelRequest.addEventListener('click', () => requestDialog.close());
+  requestDialog.addEventListener('click', (event) => {
+    if (event.target === requestDialog) requestDialog.close();
+  });
+</script>
 </body>
 </html>
