@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -15,6 +15,7 @@
       --primary-soft: #ffe4e6;
       --link-color: #e11d48;
     }
+
     @media (prefers-color-scheme: dark) {
       :root {
         --bg-color: #0f172a;
@@ -27,11 +28,13 @@
         --link-color: #fb7185;
       }
     }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       background-color: var(--bg-color);
@@ -39,7 +42,227 @@
       line-height: 1.7;
       padding: 40px 20px 80px;
     }
+
     .wrapper {
       max-width: 800px;
       margin: 0 auto;
       background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 40px 32px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    @media (min-width: 640px) {
+      .wrapper {
+        padding: 56px 48px;
+      }
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--primary-color);
+      background-color: var(--primary-soft);
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .meta {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+
+    p {
+      font-size: 15px;
+      color: var(--text-main);
+      margin-bottom: 14px;
+    }
+
+    ul {
+      margin: 0 0 18px 24px;
+    }
+
+    li {
+      font-size: 15px;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    strong {
+      color: var(--text-main);
+    }
+
+    a {
+      color: var(--link-color);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .highlight-box {
+      background-color: var(--bg-color);
+      border-left: 4px solid var(--primary-color);
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin: 18px 0;
+    }
+
+    .highlight-box p {
+      margin-bottom: 0;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    @media print {
+      body {
+        background-color: #fff;
+        color: #000;
+        padding: 0;
+      }
+      .wrapper {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="wrapper">
+    <span class="tag">Legal Terms</span>
+    <h1>Terms and Services</h1>
+    <div class="meta">
+      Effective Date: October 2026 &bull; Last Updated: October 14, 2026
+    </div>
+
+    <section>
+      <h2>1. Acceptance of Terms</h2>
+      <p>
+        By downloading, installing, accessing, or using this application and its related services, you agree to be bound by these Terms and Services ("Terms"). If you do not agree to these Terms, please do not access or use the application.
+      </p>
+    </section>
+
+    <section>
+      <h2>2. Description of Service & User Accounts</h2>
+      <p>
+        The application provides digital storytelling, interactive content, novels, and audio materials. While certain parts of the application may be browsed without registration, full functionality—including bookmarking, cross-device syncing, and unlocking premium content—may require creating an account or signing in.
+      </p>
+      <p>
+        You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.
+      </p>
+    </section>
+
+    <section>
+      <h2>3. Virtual Currency, Coins & Bonus Points</h2>
+      <p>
+        The application may offer virtual items, tokens, coins, and bonus points that allow users to unlock premium episodes, stories, or services.
+      </p>
+      <ul>
+        <li><strong>Conversion:</strong> 1 coin = 1 bonus point within this application.</li>
+        <li><strong>In-App Use Only:</strong> Coins and bonus points have no real-world monetary value, cannot be redeemed for fiat currency, and can only be used within this application.</li>
+        <li><strong>Non-Refundable:</strong> All purchases of virtual coins and items are non-refundable, non-exchangeable, and non-transferable between accounts or third parties.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Payments & Billing Method</h2>
+      <p>
+        Purchases are processed securely through authorized app store billing platforms (such as Google Play Billing). The payment will be deducted from your payment account upon confirmation of purchase.
+      </p>
+      <div class="highlight-box">
+        <p>
+          <strong>Notice:</strong> If a payment is successfully completed but virtual coins or items are not received, please navigate to <strong>More &gt; Contact Us</strong> or visit our in-app <strong>Feedback</strong> page for direct assistance.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>5. Intellectual Property Rights</h2>
+      <p>
+        All content available within the application—including but not limited to written stories, audio recordings, character designs, logos, software, and graphics—is the proprietary property of the application owner or its licensors and is protected by copyright and intellectual property laws.
+      </p>
+      <p>
+        You are granted a personal, non-exclusive, non-transferable, revocable license to access and view content strictly for personal, non-commercial entertainment. You may not copy, reproduce, scrape, distribute, or reverse engineer any part of the service.
+      </p>
+    </section>
+
+    <section>
+      <h2>6. Acceptable User Conduct</h2>
+      <p>When using the application, you agree not to:</p>
+      <ul>
+        <li>Violate any local, national, or international laws or regulations.</li>
+        <li>Attempt to bypass digital rights management (DRM) or unauthorized unlocking of locked content.</li>
+        <li>Harass, abuse, or post defamatory content in comments or support channels.</li>
+        <li>Use automated scripts, bots, or scrapers to extract data or interact with our servers.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>7. Disclaimers & Limitation of Liability</h2>
+      <p>
+        The service is provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, whether express or implied. To the maximum extent permitted by applicable law, we shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use the service.
+      </p>
+    </section>
+
+    <section>
+      <h2>8. Termination & Account Deletion</h2>
+      <p>
+        We reserve the right to suspend or terminate your account or access to the service at our sole discretion, without prior notice, for conduct that violates these Terms. You may also request account and data deletion at any time through the in-app settings.
+      </p>
+    </section>
+
+    <section>
+      <h2>9. Modifications to Terms</h2>
+      <p>
+        We may update or modify these Terms from time to time. Any changes will be posted on this page with an updated effective date. Your continued use of the application following the posting of changes constitutes acceptance of the revised Terms.
+      </p>
+    </section>
+
+    <section>
+      <h2>10. Contact Us & Support</h2>
+      <p>
+        If you have any questions, feedback, or concerns regarding these Terms and Services, please contact our support team through the in-app <strong>Contact Us</strong> chat or via the <strong>Feedback</strong> section.
+      </p>
+    </section>
+
+    <footer>
+      &copy; 2026 All rights reserved. &bull; <a href="#">Terms and Services</a>
+    </footer>
+  </main>
+
+</body>
+</html>
